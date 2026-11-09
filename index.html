@@ -1638,6 +1638,8 @@ nav .logo, .hero-wordmark {
 
     /* 프로젝트 카드: 네이버웹툰 '이달의 신작' 카드 */
     .project-grid, .project-grid-2 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+    /* 카드 4개인 그룹: 크기는 3열 그대로, 한 줄에 2개씩 */
+    .project-grid-2 { grid-template-columns: repeat(2, calc((100% - 48px) / 3)); }
     .card-thumb-wrap { aspect-ratio: 5 / 3; border-radius: 6px; background: #F2F2F2; outline: 1px solid rgba(0,0,0,0.07); outline-offset: -1px; }
     .nw-badge {
       position: absolute; left: 10px; top: 10px; z-index: 2; width: 34px; height: 34px; border-radius: 50%;
