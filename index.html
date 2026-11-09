@@ -1638,11 +1638,11 @@ nav .logo, .hero-wordmark {
 
     /* 히어로 빈 공간: Higgsfield(Nano Banana 2)로 생성한 초록 선화 캐릭터 */
     .nw-ai { position: absolute; z-index: 0; pointer-events: none; width: auto; display: block; }
-    .nw-ai-boy { left: calc(50% + 95px); top: 37px; height: 230px; }
-    .nw-ai-glasses { left: calc(50% + 250px); top: 30px; height: 225px; }
-    .nw-ai-baseball { left: calc(50% + 440px); top: 8px; height: 180px; z-index: 1; }
+    .nw-ai-boy { left: calc(50% - 668px); bottom: 0; height: 200px; }
+    .nw-ai-baseball { left: calc(50% + 250px); top: 30px; height: 200px; }
     .nw-ai-girl { left: calc(50% + 430px); bottom: 0; height: 340px; }
-    @media (max-width: 1359px) { .nw-ai-baseball, .nw-ai-girl { display: none; } }
+    @media (max-width: 1399px) { .nw-ai-boy { display: none; } }
+    @media (max-width: 1359px) { .nw-ai-girl { display: none; } }
     @media (max-width: 1100px) { .nw-ai { display: none; } }
 
     /* 프로젝트 카드: 네이버웹툰 '이달의 신작' 카드 */
@@ -1818,7 +1818,6 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 <!-- HERO -->
 <section class="hero" id="hero">
   <img class="nw-ai nw-ai-boy" src="nw-boy.png" alt="" aria-hidden="true">
-  <img class="nw-ai nw-ai-glasses" src="nw-glasses.png" alt="" aria-hidden="true">
   <img class="nw-ai nw-ai-baseball" src="nw-baseball.png" alt="" aria-hidden="true">
   <img class="nw-ai nw-ai-girl" src="nw-girl.png" alt="" aria-hidden="true">
   <div class="hero-inner">
