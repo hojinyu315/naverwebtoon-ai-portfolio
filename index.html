@@ -1635,6 +1635,28 @@ nav .logo, .hero-wordmark {
     .footer-divider { background: rgba(255,255,255,0.25); }
     .footer-email { color: #00DC64; }
     .kd-hero { background: #F5F5F5; }
+
+    /* 프로젝트 카드: 네이버웹툰 '이달의 신작' 카드 */
+    .project-grid, .project-grid-2 { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 24px; }
+    .card-thumb-wrap { aspect-ratio: 5 / 3; border-radius: 6px; background: #F2F2F2; outline: 1px solid rgba(0,0,0,0.07); outline-offset: -1px; }
+    .nw-badge {
+      position: absolute; left: 10px; top: 10px; z-index: 2; width: 34px; height: 34px; border-radius: 50%;
+      background: #00DC64; color: #111111; font-size: 12px; font-weight: 800; letter-spacing: -0.02em;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-card-body { padding: 16px 0 0; }
+    .card-poster-title { font-size: 19px; font-weight: 700; color: #111111; margin-bottom: 4px; text-wrap: auto; }
+    .nw-card-sub { font-size: 15px; font-weight: 600; color: #222222; margin-bottom: 6px; }
+    .nw-card-desc {
+      font-size: 14.5px; line-height: 1.6; color: #8C8C8C; margin: 0 0 14px;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-wrap: auto;
+    }
+    .nw-card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .nw-card-tags span { background: #F2F2F2; color: #666666; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 4px; }
+    @media (max-width: 768px) {
+      .project-grid, .project-grid-2 { grid-template-columns: 1fr; row-gap: 32px; }
+      .card-poster-title { font-size: 18px; }
+    }
     @media (max-width: 768px) {
       .section-title, .sec-dark .section-title, .sec-night .section-title { font-size: 40px; }
       .nw-char-r { width: 76px; top: 70px; }
@@ -1958,49 +1980,56 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-grid project-grid-2">
         <div class="project-card" onclick="openModal('modal-format')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-format.jpg" alt="쇼츠 포맷" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-format.jpg" alt="쇼츠 포맷" style="object-position:50% 45%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">생성 AI 장면 제작 · 캐릭터 일관성</div>
-              <div class="card-score"><span class="card-score-dot"></span>신규 컷 3주 → 4일</div>
-              <div class="project-card-period">2024.07 — 2025.12 · 생성 AI · 템플릿</div>
+              <div class="nw-card-sub">신규 컷 3주 → 4일</div>
+              <p class="nw-card-desc">주간 소재 회의로 음악·밈·이슈를 모으고, 캐릭터에 맞게 재조립한 숏폼 원작에 없는 장면은 생성 AI로 빠르게 제작</p>
+              <div class="nw-card-tags"><span>#생성AI</span><span>#템플릿</span></div>
             </div>
           </div>
         </div>
         <div class="project-card" onclick="openModal('modal-movie3')">
-          <div class="card-thumb-wrap no-fade">
-            <img class="project-card-thumb" src="thumb-movie3-card.jpg" alt="극장판 3기" onerror="this.style.background='#f4f4f4'">
+          <div class="card-thumb-wrap">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-movie3.jpg" alt="극장판 3기" style="object-position:50% 100%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">극장판 3기 예고편 기획·편집</div>
-              <div class="card-score"><span class="card-score-dot"></span>예고편 평균 조회수 6.3만 → 12만</div>
-              <div class="project-card-period">2025.08 — 2025.10 · 예고편 · 생성 장면</div>
+              <div class="nw-card-sub">예고편 평균 조회수 6.3만 → 12만</div>
+              <p class="nw-card-desc">브레드이발소 극장판 3기 개봉에 맞춰 런칭·티저·메인 예고편을 포함한 홍보 영상 전반을 기획·제작 본편에 없는 홍보 장면은 생성 AI로 만들어 예고편에 삽입</p>
+              <div class="nw-card-tags"><span>#예고편</span><span>#생성장면</span></div>
             </div>
           </div>
         </div>
         <div class="project-card" onclick="openModal('modal-shorts')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/vyoova/images/thumb-shorts.jpg" alt="오리지널 쇼츠" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/vyoova/images/thumb-shorts.jpg" alt="오리지널 쇼츠" style="object-position:50% 35%;" onerror="this.style.background='#f4f4f4'">
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">오리지널 쇼츠 기획·제작·운영</div>
-              <div class="card-score"><span class="card-score-dot"></span>평균 시청 지속률 69 → 72.8%</div>
-              <div class="project-card-period">2025.07 — 2026.03 · 상황극 숏폼 · 배역 고정</div>
+              <div class="nw-card-sub">평균 시청 지속률 69 → 72.8%</div>
+              <p class="nw-card-desc">유튜브·인스타 두 채널에 주 4편, 8개월간 100편 이상 기획·제작·운영 같은 제작 프로세스 위에서 브랜디드 콘텐츠도 함께 진행</p>
+              <div class="nw-card-tags"><span>#상황극숏폼</span><span>#배역고정</span></div>
             </div>
           </div>
         </div>
         <div class="project-card" onclick="openModal('modal-thumbnail')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="thumb-thumbnail-card.jpg" alt="썸네일 CTR" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-thumbnail.jpg" alt="썸네일 CTR" style="object-position:50% 50%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">유튜브 채널 성장 — 롱폼 썸네일 A/B</div>
-              <div class="card-score"><span class="card-score-dot"></span>CTR 5.7 → 6.0%</div>
-              <div class="project-card-period">2024.07 — 2025.02 · 썸네일 · AI 이미지</div>
+              <div class="nw-card-sub">CTR 5.7 → 6.0%</div>
+              <p class="nw-card-desc">브레드이발소의 세계관과 트렌드를 시각적으로 재해석하여 유튜브 클릭률을 높이는 썸네일을 기획·제작</p>
+              <div class="nw-card-tags"><span>#썸네일</span><span>#AI이미지</span></div>
             </div>
           </div>
         </div>
@@ -2015,13 +2044,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-grid">
         <div class="project-card" onclick="openModal('modal-crehoho')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/crehoho-collage.jpg" alt="Crehoho" style="object-position:50% 75%;" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/crehoho-collage.jpg" alt="Crehoho" style="object-position:50% 60%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">Crehoho — 이미지 서사 창작</div>
-              <div class="card-score"><span class="card-score-dot"></span>기여도 100%</div>
-              <div class="project-card-period">2023.05 — 현재 · 이미지 서사 · Kling 영상화</div>
+              <div class="nw-card-sub">기여도 100%</div>
+              <p class="nw-card-desc">2023년 가상 전시를 상정한 아트워크 기획에서 출발한 개인 창작 채널 상업 IP 제약 없이 새 생성 툴과 몰입 구조를 자유롭게 실험하는 공간</p>
+              <div class="nw-card-tags"><span>#이미지서사</span><span>#Kling영상화</span></div>
             </div>
           </div>
         </div>
@@ -2036,13 +2067,15 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-grid">
         <div class="project-card" onclick="openModal('modal-diyclawd')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-diyclawd.png" alt="DIY-Claude" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-diyclawd.png" alt="DIY-Claude" style="object-position:50% 50%;" onerror="this.style.background='#f4f4f4'">
+            <span class="nw-badge">AI</span>
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">DIY-Claude — 데스크탑 캐릭터 앱</div>
-              <div class="card-score"><span class="card-score-dot"></span>기여도 100%</div>
-              <div class="project-card-period">2026 · 개인 프로젝트 · AI 도구 제작</div>
+              <div class="nw-card-sub">기여도 100%</div>
+              <p class="nw-card-desc">Claude Code의 작업 상태를 화면 위 캐릭터로 보여주는 macOS 데스크탑 도우미 공식 hook 기능과 macOS 네이티브 API(AppKit)만으로 직접 설계·제작한 개인 프로젝트</p>
+              <div class="nw-card-tags"><span>#개인프로젝트</span><span>#AI도구제작</span></div>
             </div>
           </div>
         </div>
@@ -2057,13 +2090,14 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-grid">
         <div class="project-card" onclick="openModal('modal-cheritoon')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-cheritoon.jpg" alt="체리툰" style="object-position:50% 30%;" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/naverwebtoon/images/thumb-cheritoon.jpg" alt="체리툰" style="object-position:50% 25%;" onerror="this.style.background='#f4f4f4'">
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">체리툰 오리지널 숏폼 기획·제작</div>
-              <div class="card-score"><span class="card-score-dot"></span>300만+ 숏폼 6건</div>
-              <div class="project-card-period">2025.09 — 2026.03 · 숏폼 · 학원물/연애</div>
+              <div class="nw-card-sub">300만+ 숏폼 6건</div>
+              <p class="nw-card-desc">이미 숏폼 중심으로 개편된 채널을 이어받아, 트렌드를 매주 갱신해 반영하며 조회수 300만+ 성과를 이어간 오리지널 쇼츠 기획·제작</p>
+              <div class="nw-card-tags"><span>#숏폼</span><span>#학원물</span><span>#연애</span></div>
             </div>
           </div>
         </div>
@@ -2078,13 +2112,14 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       <div class="project-grid">
         <div class="project-card" onclick="openModal('modal-cjenm')">
           <div class="card-thumb-wrap">
-            <img class="project-card-thumb" src="https://hojinyu315.github.io/vyoova/images/thumb-cjenm.jpg" alt="CJ ENM" onerror="this.style.background='#f4f4f4'">
+            <img class="project-card-thumb" src="https://hojinyu315.github.io/vyoova/images/thumb-cjenm.jpg" alt="CJ ENM" style="object-position:50% 50%;" onerror="this.style.background='#f4f4f4'">
           </div>
           <div class="project-card-body">
             <div class="card-body-text">
               <div class="card-poster-title">투니버스 IP 콘텐츠 기획·운영</div>
-              <div class="card-score"><span class="card-score-dot"></span>기여도 100%</div>
-              <div class="project-card-period">2021.05 — 2021.11 · 투니버스 · 썸네일/SNS</div>
+              <div class="nw-card-sub">기여도 100%</div>
+              <p class="nw-card-desc">CJ ENM 투니버스 IP를 활용해 클릭을 만드는 썸네일과 콘텐츠처럼 소비되는 SNS 콘텐츠를 함께 설계 감정·궁금증 중심 썸네일과 트렌드 기반 캐릭터 콘텐츠를 결합해 유입부터 반응까지 이어지는 콘텐츠 구조를 구축</p>
+              <div class="nw-card-tags"><span>#투니버스</span><span>#썸네일</span><span>#SNS</span></div>
             </div>
           </div>
         </div>
